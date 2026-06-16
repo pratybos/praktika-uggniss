@@ -3,8 +3,6 @@ name: C++ CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -13,8 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Compile
-      run: g++ -std=c++20 C++Zaidimas.cpp -o app
+    - name: build
+      run: g++ -std=c++20 *.cpp -o app
 
-    - name: Run
+    - name: run
       run: ./app
