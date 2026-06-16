@@ -1,0 +1,4 @@
+﻿  C++Zaidimas.cpp
+C:\Users\Computer\Desktop\C++ Zaidimas\C++Zaidimas\C++Zaidimas.cpp(140,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Computer\Desktop\C++ Zaidimas\C++Zaidimas\C++Zaidimas.cpp(1100,55): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+  C++Zaidimas.vcxproj -> C:\Users\Computer\Desktop\C++ Zaidimas\C++Zaidimas\x64\Debug\C++Zaidimas.exe
