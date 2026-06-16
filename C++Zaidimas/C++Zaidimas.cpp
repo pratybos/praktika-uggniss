@@ -1,5 +1,5 @@
-﻿#include <iostream>
-//#include <Windows.h>
+#include <iostream>
+#include <Windows.h>
 #include <string> 
 #include <limits> // tik del std::cin Ignore
 #include <random> // Idomu pabandyti, C++ standartai (C++20/23)
@@ -8,16 +8,10 @@
 #include <time.h>       /* time */
 #include <fstream>      // save/load
 
-
-
-
-
 //del highscore visi sitie
 #include <vector>
 #include <algorithm>
 #include <ctime>
-
-
 
 
 void PagrindinisMeniu();
@@ -150,7 +144,7 @@ int main()
             VeiksmaiDienoje = 0;  // reset veiksmai
             IsgyventaDienu++;     // diena praejo
             std::cout << "\n*** " << (Diena ? "Diena" : "Naktis") << " prasideda! ***\n\n";
-            //Sleep(3000);(2000);
+            Sleep(2000);
         }
         //++++++++++++++++++++++++++++++++++++
 
@@ -180,7 +174,7 @@ int main()
 void KawaiiMenu()
 {
     kawaii = true;
-    //Sleep(3000);(3000);
+    Sleep(3000);
     std::cout << "********Zaidimas********\n";
     std::cout << " |*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*| \n\n\n";
     std::cout << "      /|_/| <3 \n";
@@ -188,7 +182,7 @@ void KawaiiMenu()
     std::cout << "       / | \n";
     std::cout << "      (___)_// \n";
     std::cout << " |*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*| \n\n\n";
-    //Sleep(3000);(2000);
+    Sleep(2000);
     system("cls");
 
 }
@@ -212,7 +206,7 @@ JeiNumeris1: // jei nesinori rinktis tada griztama cia ir automatiskai bus pasir
     {
         veikejoPasirinkimas = randomNumber;
         std::cout << "veikejoPasirinkimas = " << veikejoPasirinkimas << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         GyvybesDabar = Gyvybes;
         goto JeiNumeris1;
     }
@@ -291,7 +285,7 @@ void PagrindinisMeniu()
         AddHighscore();
 
         std::cout << "Highscore pridetas!\n";
-        //Sleep(3000);(1500);
+        Sleep(1500);
         return;
     }
     else if (a == 3)
@@ -316,7 +310,7 @@ void PagrindinisMeniu()
     {
         //Naujas zaidimas
         std::cout << "NAUJAS ZAIDIMAS!!! " << "\n\n";
-        //Sleep(3000);(2000);
+        Sleep(2000);
         //std::cin >> a;
         //std::cin.ignore();
         PagrindinisMeniu();
@@ -325,7 +319,7 @@ void PagrindinisMeniu()
     {
         //instrukcijos
         std::cout << "INSTRUKCIJOS !!!" << "\n\n";
-        //Sleep(3000);(2000);
+        Sleep(2000);
         //std::cin >> a;
         //std::cin.ignore();
         PagrindinisMeniu();
@@ -352,7 +346,7 @@ JudejimoPradzia:
     {
         system("cls");
         std::cout << "LAIMEJOTE ZAIDIMA, SVEIKINIMAI!!!!!!" << std::endl;
-        //Sleep(3000);(4000);
+        Sleep(4000);
         exit(0);
     }
     // rodyti diena/naktis
@@ -425,7 +419,7 @@ JudejimoPradzia:
         // praleidzia diena/nakti
         VeiksmaiDienoje = MaxVeiksmaiPerDiena; // priverstinai paleidzia dienos pabaiga
         std::cout << "\nPraleista diena/nakti...\n";
-        //Sleep(3000);(1500);
+        Sleep(1500);
     }
     else
     {
@@ -460,7 +454,7 @@ JudejimoPradzia:
         Miegutis = false;
         AplinkosApieska = false;
 
-        //Sleep(3000);(2000);
+        Sleep(2000);
     }
 
 
@@ -493,7 +487,7 @@ void Maistas()
     if (c <= 20) // geri konservai
     {
         std::cout << "Radai neaiskius 3 konservus, taciau juos suvalgius pajutai, kad net akyse sviesiau pasidare ! \n\n" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         Gyvybes = Gyvybes + 5;
         Alkis = Alkis + 10;
         Energija = Energija + 5;
@@ -503,7 +497,7 @@ void Maistas()
     else if (c <= 40) // blogi konservai
     {
         std::cout << "Radai neaiskius 3 konservus, taciau juos suvalgius labai supykino ! \n\n" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         if (MaistoApdorojimas == false)
         {
             Gyvybes = Gyvybes - 20;
@@ -516,7 +510,7 @@ void Maistas()
     else if (c <= 60) // Zuikis
     {
         std::cout << "Tau pavyko sumedzioti zuiki, taciau tai issekino paskutines jegas \n\n" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         Gyvybes = Gyvybes + 15;
         Alkis = Alkis + 35;
         Energija = Energija - 30;
@@ -526,7 +520,7 @@ void Maistas()
     else if (c <= 75) //energetinis, isgerus kofeino NEGALIMA MIEGOTI
     {
         std::cout << "Tau pavyko rasti kelis energetinius gerimus, po 150 mg kofeino! \n\n" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         Energija = Energija + 30;
         std::cin.clear();
         std::cin.ignore(INT_MAX, '\n');
@@ -535,12 +529,12 @@ void Maistas()
     else if (c <= 100) //nepasiseke rasti maisto :(
     {
         std::cout << "Veltui isvaistytos jegos, reikia ieskoti maisto kitur \n\n" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         Energija = Energija - 10;
         std::cin.clear();
         std::cin.ignore(INT_MAX, '\n');
     }
-    //Sleep(3000);(2000);
+    Sleep(2000);
     system("cls");
     PagrindinisMeniu();
 }
@@ -557,7 +551,7 @@ void Miegas()
         case 1:
         {
             std::cout << "Pagaliau pavyko normaliai pasnausti, jegos grizta... \n\n" << std::endl;
-            //Sleep(3000);(3000);
+            Sleep(3000);
             Gyvybes = Gyvybes + 10;
             Alkis = Alkis - 20;
             Energija = Energija + 30;
@@ -568,7 +562,7 @@ void Miegas()
         case 2:
         {
             std::cout << "Uzmigti nesigavo, taciau poilsis vistiek nors kiek pastiprino... \n\n" << std::endl;
-            //Sleep(3000);(3000);
+            Sleep(3000);
             Gyvybes = Gyvybes + 5;
             Alkis = Alkis - 20;
             Energija = Energija + 15;
@@ -579,9 +573,9 @@ void Miegas()
         case 3:
         {
             std::cout << "Staiga isgirsti kaip arteja neaiskus garsas ! Kazkas artinasi !" << std::endl;
-            //Sleep(3000);(2000);
+            Sleep(2000);
             std::cout << "Staigiai pasoki ir kupinas adrenalino pasiruosi kovai!\n\n" << std::endl;
-            //Sleep(3000);(2000);
+            Sleep(2000);
             Energija = Energija + 10;
             std::cout << "KARAS!!!!!!!!!!!" << std::endl;
             Monstras();
@@ -589,7 +583,7 @@ void Miegas()
             //std::cout << "A" << tempName << "! /n;
             //DabartinisMonstras = tempName;
             Karas();
-            //Sleep(3000);(1000);
+            Sleep(1000);
             break;
         }
         }
@@ -605,17 +599,17 @@ void Resursai()
     {
         std::cout << "Jus radote gelezies, taciau pasidaro sunku gabenti !" << std::endl;
         ITEMGelezis++;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         Energija -= 20;
         std::cout << "Tempiant gelezies likucius buvote uzpultas monstro !" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         Karas();
     }
     else if (h <= 20 && h > 5)
     {
         std::cout << "Jus radote vielos, gal tai pravers ! Taciau suviniojant susizalojote" << std::endl;
         ITEMviela++;
-        //Sleep(3000);(4000);
+        Sleep(4000);
         Energija -= 5;
         GyvybesDabar -= 5;
 
@@ -623,27 +617,27 @@ void Resursai()
     else if (h <= 60 && h > 20)
     {
         std::cout << "Jus nieko neradote, demotivuojantis jegu svaistymas !" << std::endl;
-        //Sleep(3000);(4000);
+        Sleep(4000);
         Energija -= 15;
     }
     else if (h <= 70 && h > 60)
     {
         std::cout << "Jus radote strypa, bus reikalingas !" << std::endl;
         ITEMstrypas++;
-        //Sleep(3000);(4000);
+        Sleep(4000);
 
     }
     else if (h <= 90 && h > 70)
     {
         std::cout << "Jus radote lipnios juostos, paciu laiku! " << std::endl;
         ITEMlipniJuosta++;
-        //Sleep(3000);(4000);
+        Sleep(4000);
     }
     else
     {
         std::cout << "Jus radote suvirinimo prietaisa, taciau toks svarbus irankis yra saugomas !" << std::endl;
         ITEMsuvirinimas = true;
-        //Sleep(3000);(4000);
+        Sleep(4000);
         Karas();
     }
     AplinkosApieska = true;
@@ -664,7 +658,7 @@ void Pasauliai()
     Pasaulis = rand() % 4; // 0–3
 
     std::cout << "Keliaujate i kita pasauli...\n";
-    //Sleep(3000);(3000);
+    Sleep(3000);
 
     std::cout << "Pasaulis: " << PasauliuVardai[Pasaulis] << "\n\n";
 
@@ -691,7 +685,7 @@ void Pasauliai()
     //if (GyvybesDabar > GyvybesMax) GyvybesDabar = GyvybesMax;
     //if (Energija > 100) Energija = 100;
 
-    //Sleep(3000);(3000);
+    Sleep(3000);
 }
 
 
@@ -716,7 +710,7 @@ void Karas()
 
     if (Monstriukas == true)
     {
-        //Sleep(3000);(500);
+        Sleep(500);
         system("cls");
 
         std::cout << "Zaidejas: " << ZaidejoKlase << "         Zaidejo gyvybes: " << GyvybesDabar << "       Zaidejo lygis: " << Lygis << "      Zaidejo patirtis: " << Patirtis << std::endl;
@@ -730,7 +724,7 @@ void Karas()
             GyvybesDabar = 0;
             system("cls");
             std::cout << "Jus negyvas! \n Auksciausias lygys pasiektas: " << Lygis << " buvote nuzudytas " << DabartinisMonstras << std::endl;
-            //Sleep(3000);(2000);
+            Sleep(2000);
             exit(0);
         }
         else if (MonstroGyvybes <= 0)
@@ -747,14 +741,14 @@ void Karas()
             std::cout << "3. BEGTI!\n";
             std::cout << "\n";
             std::cin >> ZaidejoAtaka;
-            //Sleep(3000);(1000);
+            Sleep(1000);
 
             if (ZaidejoAtaka == 1)
             {
                 // Ataka
                 std::cout << "Puolant... padarete " << efektoGynyba << " zalos monstrui: " << DabartinisMonstras << std::endl;
                 MonstroGyvybes -= efektoGynyba;
-                //Sleep(3000);(1500);
+                Sleep(1500);
 
                 if (MonstroGyvybes >= 1)
                 {
@@ -762,7 +756,7 @@ void Karas()
                     std::cout << "Monstras atakuoja.. \n";
                     GyvybesDabar -= efektoAtaka;
                     std::cout << "Just smarkiai nukentejote " << efektoAtaka << " Gyvybiu liko: " << GyvybesDabar << std::endl;
-                    //Sleep(3000);(1500);
+                    Sleep(1500);
                 }
             }
             else if (ZaidejoAtaka == 2)
@@ -776,14 +770,14 @@ void Karas()
                     Gydymas = Lygis * 10 / 2;
                     std::cout << "Buvo pagydytas tasku: " << Gydymas << std::endl;
                     GyvybesDabar += Gydymas;
-                    //Sleep(3000);(2000);
+                    Sleep(2000);
                 }
                 else
                 {
                     std::cout << "Nepavyko blokuoti atakos! \n";
                     GyvybesDabar -= efektoAtaka;
                     std::cout << "Jus buvote pasmeigtas i nugara del " << efektoAtaka << " dabartines gyvybes " << GyvybesDabar << std::endl;
-                    //Sleep(3000);(2000);
+                    Sleep(2000);
                 }
             }
             else if (ZaidejoAtaka == 3)
@@ -794,7 +788,7 @@ void Karas()
                 if (x >= 50)
                 {
                     std::cout << "Pavyko pabegti !\n";
-                    //Sleep(3000);(2000);
+                    Sleep(2000);
                     PagrindinisMeniu();
                     return;
                 }
@@ -804,13 +798,13 @@ void Karas()
                     std::cout << "Monstras jus ziauriai suzalojo ! \n";
                     GyvybesDabar -= efektoAtaka + 20;
                     std::cout << "Jus praradote: " << efektoAtaka + 20 << " dabar gyvybiu liko: " << GyvybesDabar << std::endl;
-                    //Sleep(3000);(2000);
+                    Sleep(2000);
                 }
             }
             else
             {
                 std::cout << "Neteisingas skaicius! \n";
-                //Sleep(3000);(1000);
+                Sleep(1000);
             }
 
             // Po veiksmo patikrinti gyvybes
@@ -819,7 +813,7 @@ void Karas()
                 GyvybesDabar = 0;
                 system("cls");
                 std::cout << "Jus negyvas! \n Auksciausias lygys pasiektas: " << Lygis << " buvote nuzudytas " << DabartinisMonstras << std::endl;
-                //Sleep(3000);(2000);
+                Sleep(2000);
                 exit(0);
             }
             else if (MonstroGyvybes <= 0)
@@ -845,10 +839,10 @@ void levelUP()
 {
     Patirtis = Patirtis + MonstroPatirtis;
     std::cout << "Jus nugalejote" << std::endl;
-    //Sleep(3000);(1000);
+    Sleep(1000);
     std::cout << " uzmusant monstra gaunate: " << MonstroPatirtis << " patirties tasku" << std::endl;
 
-    //Sleep(3000);(2000);
+    Sleep(2000);
     if (Patirtis >= KitasPatirtiesLygis)
     {
         Lygis++;
@@ -857,11 +851,11 @@ void levelUP()
         GyvybesMax = GyvybesDabar;
         std::cout << "Pasiektas kitas zaidejo lygis! " << Lygis << std::endl;
         std::cout << "Tasku lygis pakilo 20 ! " << GyvybesDabar << std::endl;
-        //Sleep(3000);(4000);
+        Sleep(4000);
         Monstriukas = false;
         PagrindinisMeniu();
     }
-    //Sleep(3000);(4000);
+    Sleep(4000);
     Monstriukas = false;
     PagrindinisMeniu();
 }
@@ -950,7 +944,7 @@ void Monstras()
             std::cout << "[Apleistas miestas] "
                 << DabartinisMonstras
                 << " sustiprintas! +5 HP, +2 Ataka\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
     }
     else if (Pasaulis == 1) // Miskas
@@ -964,7 +958,7 @@ void Monstras()
             std::cout << "[Miskas] "
                 << DabartinisMonstras
                 << " gauna +3 Ataka\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
 
         if (DabartinisMonstras == "Zombis" ||
@@ -976,7 +970,7 @@ void Monstras()
             std::cout << "[Miskas] "
                 << DabartinisMonstras
                 << " susilpnejo! -20 HP, -3 Ataka\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
     }
     else if (Pasaulis == 2) // Dykuma
@@ -987,7 +981,7 @@ void Monstras()
             MonstroAtaka += 20;
 
             std::cout << "[Dykuma] Minedas gauna +20 HP ir +20 Ataka!\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
         else
         {
@@ -996,7 +990,7 @@ void Monstras()
             std::cout << "[Dykuma] "
                 << DabartinisMonstras
                 << " praranda 15 HP\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
     }
     else if (Pasaulis == 3) // Soi6
@@ -1005,7 +999,7 @@ void Monstras()
 
         std::cout << "[Soi6] Jus iskart praradote 20 gyvybiu!\n";
         std::cout << "Dabar gyvybiu: " << GyvybesDabar << std::endl;
-        //Sleep(3000);(1500);
+        Sleep(1500);
     }
 
     // INVENTORIAUS BONUSAI
@@ -1021,7 +1015,7 @@ void Monstras()
             std::cout << "[Lazda su viela] "
                 << DabartinisMonstras
                 << " nukencia nuo spygliu! -15 HP, -2 Ataka\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
     }
 
@@ -1034,7 +1028,7 @@ void Monstras()
 
             std::cout << "[Zaisliukas is lazdos] "
                 << "Piktas suo issiblasko! -20 HP, -5 Ataka\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
     }
 
@@ -1048,7 +1042,7 @@ void Monstras()
             std::cout << "[Metalinis salmas] "
                 << DabartinisMonstras
                 << " sunkiau suzeidzia jus! -4 Ataka\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
     }
 
@@ -1060,13 +1054,13 @@ void Monstras()
 
             std::cout << "[Metaliniai sarvai] "
                 << "Minedo nagai neprasiskverbia! Ataka sumazinta iki 1\n";
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
 
         GyvybesDabar += 5;
 
         std::cout << "[Metaliniai sarvai] +5 Gyvybes pries kova\n";
-        //Sleep(3000);(1000);
+        Sleep(1000);
     }
 
     if (MonstroGyvybes < 1)
@@ -1100,12 +1094,12 @@ InventoriausPradzia:
     if (ITEMsuvirinimas == true || ITEMlipniJuosta == true)
     {
         std::cout << "Jau galite sutvirtinti asmenini inventoriu suvirinimu" << std::endl;
-        //Sleep(3000);(1500);
+        Sleep(1500);
     }
     else if (ITEMsuvirinimas == false && ITEMlipniJuosta == false)
     {
         std::cout << "Apieskok aplinka ir surask inventoriu su kuriuo gali GAMINTI ir SUTVIRTINTI" << std::endl;
-        //Sleep(3000);(4000);
+        Sleep(4000);
         system("cls");
         PagrindinisMeniu();
         return;
@@ -1165,12 +1159,12 @@ InventoriausPradzia:
             GyvybesDabar += 30;
 
             std::cout << "+30 gyvybiu!" << std::endl;
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
         else
         {
             std::cout << "Nepakanka resursu!" << std::endl;
-            //Sleep(3000);(1500);
+            Sleep(1500);
             goto InventoriausPradzia;
         }
     }
@@ -1187,12 +1181,12 @@ InventoriausPradzia:
             GyvybesDabar += 20;
 
             std::cout << "+20 gyvybiu!" << std::endl;
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
         else
         {
             std::cout << "Nepakanka resursu!" << std::endl;
-            //Sleep(3000);(1500);
+            Sleep(1500);
             goto InventoriausPradzia;
         }
     }
@@ -1210,12 +1204,12 @@ InventoriausPradzia:
             GyvybesDabar += 40;
 
             std::cout << "+40 gyvybiu!" << std::endl;
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
         else
         {
             std::cout << "Nepakanka resursu!" << std::endl;
-            //Sleep(3000);(1500);
+            Sleep(1500);
             goto InventoriausPradzia;
         }
     }
@@ -1236,12 +1230,12 @@ InventoriausPradzia:
             std::cout << "+50 gyvybiu!" << std::endl;
             std::cout << "-10 energijos!" << std::endl;
 
-            //Sleep(3000);(1500);
+            Sleep(1500);
         }
         else
         {
             std::cout << "Nepakanka resursu!" << std::endl;
-            //Sleep(3000);(1500);
+            Sleep(1500);
             goto InventoriausPradzia;
         }
     }
@@ -1256,7 +1250,7 @@ InventoriausPradzia:
         goto InventoriausPradzia;
     }
 
-    //Sleep(3000);(1000);
+    Sleep(1000);
     system("cls");
     goto InventoriausPradzia;
 }
@@ -1276,12 +1270,12 @@ InventoriausPradzia:
     if (ITEMsuvirinimas == true || ITEMlipniJuosta == true)
     {
         std::cout << " Jau galite sutvirtinti asmenini inventoriu suvirinimu " << std::endl;
-        //Sleep(3000);(1500);
+        Sleep(1500);
     }
     else if (ITEMsuvirinimas == false && ITEMlipniJuosta == false)
     {
         std::cout << " Apieskok aplinka ir surask inventoriu su kuriuo gali GAMINTI ir SUTVIRTINTI " << std::endl;
-        //Sleep(3000);(4000);
+        Sleep(4000);
         system("cls");
         PagrindinisMeniu();
     }
@@ -1377,7 +1371,7 @@ InventoriausPradzia:
         system("cls");
         goto InventoriausPradzia;
     }
-    //Sleep(3000);(1000);
+    Sleep(1000);
     system("cls");
     goto InventoriausPradzia;
 
@@ -1398,7 +1392,7 @@ void Save()
     if (!file.is_open())
     {
         std::cout << "Nepavyko issaugoti!" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         PagrindinisMeniu();
         return;
     }
@@ -1442,7 +1436,7 @@ void Save()
     file.close();// Uzdaro faila
 
     std::cout << "Issaugota i faila: " << failas << std::endl;
-    //Sleep(3000);(2000);
+    Sleep(2000);
 
 	PagrindinisMeniu();
 }
@@ -1462,7 +1456,7 @@ void Load()
     if (!file.is_open())
     {
         std::cout << "Tokio pasaulio nera!" << std::endl;
-        //Sleep(3000);(2000);
+        Sleep(2000);
         return;
     }
 
@@ -1502,7 +1496,7 @@ void Load()
     file.close();
 
     std::cout << "Sekmingai uzkrautas pasaulis: " << lauk << std::endl;
-    //Sleep(3000);(2000);
+    Sleep(2000);
 	PagrindinisMeniu();
 }
 
